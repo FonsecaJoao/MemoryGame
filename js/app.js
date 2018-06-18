@@ -44,6 +44,17 @@ function displayCard() {
 };
 
 //   - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
+function openedCard() {
+  let openedCards = [];
+  if (openedCards.length < 2) {
+    openedCards.push(this);
+    displayCard();
+  } else {
+      matched();
+  }
+}
+
+
 //   - if the list already has another card, check to see if the two cards match
 //     + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
 //     + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
