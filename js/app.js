@@ -2,6 +2,7 @@
 let card  = document.getElementsByClassName("card");
 let cards = [...card];
 let openedCards = [];
+let matchedCard = document.getElementsByClassName("match");
 
 // Display the cards on the page
 const deck = document.querySelector(".deck");
@@ -45,6 +46,7 @@ for (var i = 0; i < cards.length; i++) {
 function displayCard() {
   this.classList.toggle("open");
   this.classList.toggle("show");
+  this.classList.toggle("disabled");
 }
 
 // - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
@@ -63,22 +65,37 @@ function openedCard() {
 //   - if the list already has another card, check to see if the two cards match
 function matched() {
 //     + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
-  openedCards[0].classList.add("match");
-  openedCards[1].classList.add("match");
+  openedCards[0].classList.add("match", "disabled");
+  openedCards[1].classList.add("match", "disabled");
   openedCards[0].classList.remove("show", "open");
   openedCards[1].classList.remove("show", "open");
   openedCards = [];
 }
 //     + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
 function unmatched() {
+  disable();
   setTimeout(function(){
     openedCards[0].classList.remove("show", "open");
     openedCards[1].classList.remove("show", "open");
+    enable();
     openedCards = [];
-  },500);
+  },400);
 }
 
+function disable() {
+  Array.prototype.filter.call(cards, function(card) {
+    card.classList.add("disabled");
+  });
+}
 
+function enable() {
+  Array.prototype.filter.call(cards, function(card){
+    card.classList.remove("disabled");
+    for (var i = 0; i < matchedCard.length; i++) {
+      matchedCard[i].classList.add("disabled");
+    }
+  });
+}
 
 //     + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
 //     + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
