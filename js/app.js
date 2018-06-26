@@ -69,8 +69,8 @@ function displayCard() {
 function openedCard() {
   openedCards.push(this);
   let length = openedCards.length;
-  moveCounter();
   if (length === 2) {
+    moveCounter();
     if (openedCards[0].innerHTML === openedCards[1].innerHTML) {
       matched();
     } else {
@@ -134,6 +134,8 @@ function startTimer() {
 // @description move counter
 //     + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
 function moveCounter() {
+  const three = document.getElementById('three');
+  const two = document.getElementById('two');
   // increment moves and change innerHTML
   moves++;
   counter.innerHTML = moves + " Moves";
@@ -142,6 +144,13 @@ function moveCounter() {
     counter.innerHTML = moves + " Move";
     startTimer();
   }
+  else if (moves === 15) {
+    three.remove();
+  }
+  else if (moves === 19) {
+    two.remove();
+  }
 }
+
 
 //     + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
