@@ -73,6 +73,7 @@ h1 {
 
 .deck .card.show {
     font-size: 33px;
+    display: flex!important;
 }
 
 .deck .card.match {
@@ -110,4 +111,13 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+/*
+ *Styles for the Modal
+ */
+
+.modal-title {
+  text-align: center;
+  text-transform: uppercase;
 }
