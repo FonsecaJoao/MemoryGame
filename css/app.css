@@ -121,3 +121,31 @@ h1 {
   text-align: center;
   text-transform: uppercase;
 }
+
+
+/*
+ * 320px media query
+ */
+
+ @media only screen and (max-width: 320px) {
+    h1 {
+      text-align: center;
+    }
+
+   .deck {
+     width: 100%;
+     min-height: 330px;
+     padding: 15px;
+   }
+
+   .deck .card {
+     height: 60px;
+     width: 60px;
+   }
+
+   .score-panel {
+     width: 100%;
+     display: flex;
+   }
+
+ }

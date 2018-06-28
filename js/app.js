@@ -70,8 +70,8 @@ function displayCard() {
 function openedCard() {
   openedCards.push(this);
   let length = openedCards.length;
+  moveCounter();
   if (length === 2) {
-    moveCounter();
     if (openedCards[0].innerHTML === openedCards[1].innerHTML) {
       matched();
     } else {
@@ -145,10 +145,10 @@ function moveCounter() {
     counter.innerHTML = moves + ' Move';
     startTimer();
   }
-  else if (moves === 15) {
+  else if (moves === 25) {
     three.remove();
   }
-  else if (moves === 19) {
+  else if (moves === 33) {
     two.remove();
   }
 }
