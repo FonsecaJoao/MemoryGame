@@ -154,25 +154,52 @@ h1 {
   * 360px ~ 405px media query
   */
 
-  @media only screen and (min-width: 360px) and (max-width: 405px) {
-     h1 {
-       text-align: center;
-     }
-
-    .deck {
-      width: 100%;
-      min-height: 371px;
-      padding: 17.44px;
+@media only screen and (min-width: 360px) and (max-width: 405px) {
+    h1 {
+      text-align: center;
     }
 
-    .deck .card {
-      height: 68.125px;
-      width: 68.125px;
-    }
-
-    .score-panel {
-      width: 100%;
-      display: flex;
-    }
-
+  .deck {
+    width: 100%;
+    min-height: 371px;
+    padding: 17.44px;
   }
+
+  .deck .card {
+    height: 68.125px;
+    width: 68.125px;
+  }
+
+  .score-panel {
+    width: 100%;
+    display: flex;
+  }
+
+}
+
+/*
+ * 406px ~ 453px media query
+ */
+
+@media only screen and (min-width: 406px) and (max-width: 453px) {
+   h1 {
+     text-align: center;
+   }
+
+ .deck {
+   width: 100%;
+   min-height: 374px;
+   padding: 19.68px;
+ }
+
+ .deck .card {
+   height: 76.875px;
+   width: 76.875px;
+ }
+
+ .score-panel {
+   width: 100%;
+   display: flex;
+ }
+
+}
