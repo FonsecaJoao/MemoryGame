@@ -124,10 +124,10 @@ h1 {
 
 
 /*
- * 320px media query
+ * 359px media query
  */
 
- @media only screen and (max-width: 320px) {
+ @media only screen and (max-width: 359px) {
     h1 {
       text-align: center;
     }
@@ -149,3 +149,30 @@ h1 {
    }
 
  }
+
+ /*
+  * 360px ~ 405px media query
+  */
+
+  @media only screen and (min-width: 360px) and (max-width: 405px) {
+     h1 {
+       text-align: center;
+     }
+
+    .deck {
+      width: 100%;
+      min-height: 371px;
+      padding: 17.44px;
+    }
+
+    .deck .card {
+      height: 68.125px;
+      width: 68.125px;
+    }
+
+    .score-panel {
+      width: 100%;
+      display: flex;
+    }
+
+  }
