@@ -230,3 +230,30 @@ h1 {
  }
 
 }
+
+/*
+ * 505px ~ 557px media query
+ */
+
+@media only screen and (min-width: 505px) and (max-width: 557px) {
+   h1 {
+     text-align: center;
+   }
+
+ .deck {
+   width: 100%;
+   min-height: 520px;
+   padding: 24.48px;
+ }
+
+ .deck .card {
+   height: 95.625px;
+   width: 95.625px;
+ }
+
+ .score-panel {
+   width: 100%;
+   display: flex;
+ }
+
+}
