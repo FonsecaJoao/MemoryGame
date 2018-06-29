@@ -19,7 +19,9 @@ const timer = document.querySelector('.timer');
 let moves = 0;
 let counter = document.querySelector('.moves');
 
-document.body.onload = startGame();
+// variable for restartGame event clicker
+const restartBtn = document.querySelectorAll('.restartBtn');
+
 
 // @description startGame function
 function startGame(){
@@ -33,7 +35,11 @@ function startGame(){
     });
     cards[i].classList.remove('show', 'open', 'match', 'disabled');
   }
+
+
 }
+
+document.body.onload = startGame();
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -179,6 +185,22 @@ function finishGame() {
       modalBody.innerHTML = finalPhrase;
     }
 
+  restartGame();
+  }
+}
+
+// @description reset function
+function restartGame() {
+  const getStar = document.querySelectorAll('i.fa-star');
+  const lenStar = getStar.length;
+  if (lenStar === 1) {
+    $('<li><i class="fa fa-star" id="two"></i></li>').insertAfter($('i.fa-star'));
+    $('<li><i class="fa fa-star" id="three"></i></li>').insertAfter($('#two'));
+  }
+  if (lenStar === 2) {
+    $('<li><i class="fa fa-star" id="three"></i></li>').insertAfter($('#two'));
+  }
+
   // reset timer
   clearInterval(interval);
   second = 0;
@@ -190,5 +212,9 @@ function finishGame() {
   counter.innerHTML = "";
 
   startGame();
-  }
+}
+
+// @description add event listener to each reset button
+for (var i = 0; i < restartBtn.length; i++) {
+  restartBtn[i].addEventListener('click', restartGame);
 }

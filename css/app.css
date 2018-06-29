@@ -94,6 +94,7 @@ h1 {
     text-align: left;
     width: 345px;
     margin-bottom: 10px;
+    display: flex;
 }
 
 .score-panel .stars {
@@ -122,6 +123,18 @@ h1 {
   text-transform: uppercase;
 }
 
+.modal-footer {
+  justify-content: center;
+}
+
+.btn {
+  background-color: #2e3d49;
+  color: white;
+}
+
+.modalBody {
+  text-align: center;
+}
 
 /*
  * 359px media query
@@ -145,7 +158,6 @@ h1 {
 
    .score-panel {
      width: 100%;
-     display: flex;
    }
 
  }
@@ -155,9 +167,6 @@ h1 {
   */
 
 @media only screen and (min-width: 360px) and (max-width: 405px) {
-    h1 {
-      text-align: center;
-    }
 
   .deck {
     width: 100%;
@@ -172,7 +181,6 @@ h1 {
 
   .score-panel {
     width: 100%;
-    display: flex;
   }
 
 }
@@ -182,9 +190,6 @@ h1 {
  */
 
 @media only screen and (min-width: 406px) and (max-width: 453px) {
-   h1 {
-     text-align: center;
-   }
 
  .deck {
    width: 100%;
@@ -199,7 +204,6 @@ h1 {
 
  .score-panel {
    width: 100%;
-   display: flex;
  }
 
 }
@@ -209,9 +213,6 @@ h1 {
  */
 
 @media only screen and (min-width: 454px) and (max-width: 504px) {
-   h1 {
-     text-align: center;
-   }
 
  .deck {
    width: 100%;
@@ -226,7 +227,6 @@ h1 {
 
  .score-panel {
    width: 100%;
-   display: flex;
  }
 
 }
@@ -236,9 +236,6 @@ h1 {
  */
 
 @media only screen and (min-width: 505px) and (max-width: 557px) {
-   h1 {
-     text-align: center;
-   }
 
  .deck {
    width: 100%;
@@ -253,7 +250,6 @@ h1 {
 
  .score-panel {
    width: 100%;
-   display: flex;
  }
 
 }
@@ -263,9 +259,6 @@ h1 {
  */
 
 @media only screen and (min-width: 558px) and (max-width: 575px) {
-   h1 {
-     text-align: center;
-   }
 
  .deck {
    width: 100%;
@@ -280,7 +273,6 @@ h1 {
 
  .score-panel {
    width: 100%;
-   display: flex;
  }
 
 }
