@@ -1,20 +1,28 @@
 # Memory Game Project
 
-## Table of Contents
+## What is the Memory Game Project
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+A classic memory game to test the user's memory. It's part of the Udacity and Google's Schoolarship Front-End Web Developer.
 
-## Instructions
+### Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+* Open https://fonsecajoao.github.io/MemoryGame/.
+* Everytime you start the Game, the cards will be shuffled.
+* Clicking on cards will turn them over so that you can see what is on the other half.
+* Your main objective is to match two card of the same type at a time.
+* Then try to match all cards with the minimum moves possible.
 
-To get started, open `js/app.js` and start building out the app's functionality
+### Screenshot
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+![Mobile view](https://screenshots.firefox.com/CN7VLlurNJwhqebc/null)
 
-## Contributing
+### Challenge
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+Beat the game with 3 stars.
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+### External libraries Used
+
+* Bootstrap
+* jQuery
+* FontAwesome
+* [animate.css](https://github.com/daneden/animate.css)
