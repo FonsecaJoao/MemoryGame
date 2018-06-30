@@ -69,6 +69,8 @@ function displayCard() {
   this.classList.toggle('open');
   this.classList.toggle('show');
   this.classList.toggle('disabled');
+  // this.classList.toggle('animate');
+  // this.classList.toggle('fadeIn');
 }
 
 // @description openedCard function
@@ -90,23 +92,25 @@ function openedCard() {
 //   - if the list already has another card, check to see if the two cards match
 function matched() {
 //     + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
-  openedCards[0].classList.add('match', 'disabled');
-  openedCards[1].classList.add('match', 'disabled');
-  openedCards[0].classList.remove('show', 'open');
-  openedCards[1].classList.remove('show', 'open');
+  openedCards[0].classList.add('match', 'disabled', 'flash', 'animated');
+  openedCards[1].classList.add('match', 'disabled', 'flash', 'animated');
+  openedCards[0].classList.remove('show', 'open', 'fadeIn', 'animate');
+  openedCards[1].classList.remove('show', 'open', 'fadeIn', 'animate');
   openedCards = [];
 }
 
 // @description unmatched function
 //     + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
 function unmatched() {
+  openedCards[0].classList.add('shake', 'animated');
+  openedCards[1].classList.add('shake', 'animated');
   disable();
   setTimeout(function(){
-    openedCards[0].classList.remove('show', 'open');
-    openedCards[1].classList.remove('show', 'open');
+    openedCards[0].classList.remove('show', 'open', 'shake', 'animated', 'fadeIn', 'animate');
+    openedCards[1].classList.remove('show', 'open', 'shake', 'animated', 'fadeIn', 'animate');
     enable();
     openedCards = [];
-  },400);
+  },1000);
 }
 
 // @description disable cards temporarily
@@ -151,10 +155,10 @@ function moveCounter() {
     counter.innerHTML = moves + ' Move';
     startTimer();
   }
-  else if (moves === 25) {
+  else if (moves === 26) {
     three.remove();
   }
-  else if (moves === 33) {
+  else if (moves === 40) {
     two.remove();
   }
 }

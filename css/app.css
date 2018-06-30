@@ -276,3 +276,10 @@ h1 {
  }
 
 }
+
+.animate {
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
