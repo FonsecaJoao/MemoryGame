@@ -14,7 +14,7 @@ A classic memory game to test the user's memory. It's part of the Udacity and Go
 
 ### Screenshot
 
-![Mobile view](https://imgur.com/a/mVt2aRp)
+[[https://github.com/FonsecaJoao/MemoryGame/blob/master/img/Screenshot.png|alt=Mobile View]]
 
 ### Challenge
 
