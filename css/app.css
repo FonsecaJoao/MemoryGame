@@ -92,7 +92,7 @@ h1 {
 
 .score-panel {
     text-align: left;
-    width: 345px;
+    width: 550px;
     margin-bottom: 10px;
     display: flex;
 }
@@ -275,11 +275,4 @@ h1 {
    width: 100%;
  }
 
-}
-
-.animate {
-  -webkit-animation-duration: 0.2s;
-  animation-duration: 0.2s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
 }

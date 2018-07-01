@@ -33,7 +33,7 @@ function startGame(){
 //   - add each card's HTML to the page
       deck.appendChild(item);
     });
-    cards[i].classList.remove('show', 'open', 'match', 'disabled');
+    cards[i].classList.remove('show', 'open', 'match', 'disabled', 'flash');
   }
 
 
@@ -69,8 +69,6 @@ function displayCard() {
   this.classList.toggle('open');
   this.classList.toggle('show');
   this.classList.toggle('disabled');
-  // this.classList.toggle('animate');
-  // this.classList.toggle('fadeIn');
 }
 
 // @description openedCard function
@@ -92,25 +90,25 @@ function openedCard() {
 //   - if the list already has another card, check to see if the two cards match
 function matched() {
 //     + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
-  openedCards[0].classList.add('match', 'disabled', 'flash', 'animated');
-  openedCards[1].classList.add('match', 'disabled', 'flash', 'animated');
-  openedCards[0].classList.remove('show', 'open', 'fadeIn', 'animate');
-  openedCards[1].classList.remove('show', 'open', 'fadeIn', 'animate');
+  openedCards[0].classList.add('match', 'disabled', 'flash');
+  openedCards[1].classList.add('match', 'disabled', 'flash');
+  openedCards[0].classList.remove('show', 'open');
+  openedCards[1].classList.remove('show', 'open');
   openedCards = [];
 }
 
 // @description unmatched function
 //     + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
 function unmatched() {
-  openedCards[0].classList.add('shake', 'animated');
-  openedCards[1].classList.add('shake', 'animated');
+  openedCards[0].classList.add('shake');
+  openedCards[1].classList.add('shake');
   disable();
   setTimeout(function(){
-    openedCards[0].classList.remove('show', 'open', 'shake', 'animated', 'fadeIn', 'animate');
-    openedCards[1].classList.remove('show', 'open', 'shake', 'animated', 'fadeIn', 'animate');
+    openedCards[0].classList.remove('show', 'open', 'shake');
+    openedCards[1].classList.remove('show', 'open', 'shake');
     enable();
     openedCards = [];
-  },1000);
+  },500);
 }
 
 // @description disable cards temporarily
@@ -172,21 +170,23 @@ function finishGame() {
   const finalTime = timer.innerHTML;
   const three = document.getElementById('three');
   const two = document.getElementById('two');
-  let finalPhrase = 'You made ' + moves + ' Moves' + ' in ' + finalTime + '. ' + 'Rating: ' + lenStar + ' Stars';
+  let finalPhrase = 'You made ' + moves + ' Moves' + ' in ' + finalTime + '. <br>\ ' + 'Rating: ' + lenStar + ' Stars';
 
   if (matchedCard.length === 16) {
     $('#myModal').modal('show');
+      // if user gets 1 star adds the missing 2 stars on restart and add message to modal
     if (lenStar === 1) {
-      finalPhrase = 'You made ' + moves + ' Moves' + ' in ' + finalTime + '. ' + 'Rating: ' + lenStar + ' Star';
+      finalPhrase = 'You made ' + moves + ' Moves' + ' in ' + finalTime + '. <br>\ ' + 'Rating: ' + lenStar + ' Star';
       modalBody.innerHTML = finalPhrase;
       $('<li><i class="fa fa-star" id="two"></i></li>').insertAfter($('i.fa-star'));
       $('<li><i class="fa fa-star" id="three"></i></li>').insertAfter($('#two'));
     }
+      // if user gets 2 star adds the missing star on restart and add message to modal
     if (lenStar === 2) {
       modalBody.innerHTML = finalPhrase;
       $('<li><i class="fa fa-star" id="three"></i></li>').insertAfter($('#two'));
     } else {
-      modalBody.innerHTML = finalPhrase;
+      modalBody.innerHTML = finalPhrase; //adds message to modal
     }
 
   restartGame();
@@ -195,12 +195,15 @@ function finishGame() {
 
 // @description reset function
 function restartGame() {
+
   const getStar = document.querySelectorAll('i.fa-star');
   const lenStar = getStar.length;
+  // if user gets 1 star adds the missing 2 stars on restart
   if (lenStar === 1) {
     $('<li><i class="fa fa-star" id="two"></i></li>').insertAfter($('i.fa-star'));
     $('<li><i class="fa fa-star" id="three"></i></li>').insertAfter($('#two'));
   }
+    // if user gets 2 star adds the missing star on restart
   if (lenStar === 2) {
     $('<li><i class="fa fa-star" id="three"></i></li>').insertAfter($('#two'));
   }
