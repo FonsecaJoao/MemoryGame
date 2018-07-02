@@ -58,7 +58,7 @@ function shuffle(array) {
 
 // @description event listener on all cards
 // Set up the event listener for a card. If a card is clicked:
-for (var i = 0; i < cards.length; i++) {
+for (let i = 0; i < cards.length; i++) {
   cards[i].addEventListener('click', displayCard);
   cards[i].addEventListener('click', openedCard);
   cards[i].addEventListener('click', finishGame);
@@ -218,10 +218,13 @@ function restartGame() {
   moves = 0;
   counter.innerHTML = "";
 
+  // empty openedCards to avoid bug issues
+  openedCards = [];
+
   startGame();
 }
 
 // @description add event listener to each reset button
-for (var i = 0; i < restartBtn.length; i++) {
+for (let i = 0; i < restartBtn.length; i++) {
   restartBtn[i].addEventListener('click', restartGame);
 }
